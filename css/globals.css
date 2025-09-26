@@ -13,15 +13,16 @@
 }
 
 a,
-span, 
-button, 
+span,
+button,
 label,
 input,
 textarea {
     display: inline-block;
 }
 
-ol, ul {
+ol,
+ul {
     list-style-type: none;
 }
 
@@ -29,6 +30,11 @@ img {
     display: block;
     width: 100%;
     height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 
@@ -45,17 +51,17 @@ img {
     font-weight: normal;
 }
 
-.body > * {
+.body>* {
     flex-shrink: 0;
 }
 
-.body > main {
+.body>main {
     flex-grow: 1;
 }
 
 .container {
-    width:calc(var(--container-width) + (var(--container-padding) * 2));
-    padding: 0 var(--container-padding); 
+    width: calc(var(--container-width) + (var(--container-padding) * 2));
+    padding: 0 var(--container-padding);
     margin: 0 auto;
 }
 
@@ -87,7 +93,7 @@ img {
     gap: 10px;
 }
 
-.header-buttons > * + * {
+.header-buttons>*+* {
     margin-left: 8px;
 }
 
@@ -111,7 +117,8 @@ img {
     display: flex;
     align-items: center;
     gap: 10px;
-    justify-content: space-between;  /*растягивание между собой*/
+    justify-content: space-between;
+    /*растягивание между собой*/
 }
 
 .footer-left {
@@ -126,7 +133,7 @@ img {
     gap: 21px;
 }
 
-.footer-link > * + * {
+.footer-link>*+* {
     margin-left: 15px;
 }
 
@@ -169,7 +176,8 @@ img {
     color: #302c34;
 }
 
-.banner-item-content > *:not(:last-child) { /*(> * + *) */
+.banner-item-content>*:not(:last-child) {
+    /*(> * + *) */
     margin-bottom: 15px;
 }
 
@@ -218,7 +226,7 @@ img {
     width: 306px;
 }
 
-.search-label, 
+.search-label,
 .search {
     width: 100%;
 }
@@ -259,14 +267,16 @@ img {
 
 /*restaurants-list*/
 
-.restaurants-list {
+.restaurants-list,
+.products-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px 30px;
     padding-top: 44px;
 }
 
-.restaurant {
+.restaurant,
+.product {
     border-radius: 7px;
     overflow: hidden;
     background: #fff;
@@ -278,11 +288,13 @@ img {
 }
 
 .restaurant-image .image {
-    object-position: center;    /* картинка сжим*/
+    object-position: center;
+    /* картинка сжим*/
 }
 
-.restaurant-content {
-    padding: 20px 23.5px 35px;
+.restaurant-content,
+.product-content {
+    padding: 20px 20px 35px;
 }
 
 .restaurant-content-top {
@@ -300,24 +312,26 @@ img {
 
 .restaurant .time {
     background-color: #262626;
-    color: #fff; 
+    color: #fff;
     border-radius: 2px;
     font-size: 12px;
     line-height: 1.6;
     padding: 1px 8px;
 }
 
-.restaurant-content > * + * {
+.restaurant-content>*+* {
     margin-top: 10px;
 }
 
-.restaurant-content-details {
+.restaurant-content-details,
+.products-top-details {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-.restaurant .raiting {
+.restaurant .raiting,
+.products .raiting {
     display: flex;
     gap: 7.5px;
     align-items: center;
@@ -328,17 +342,72 @@ img {
     line-height: 1.7;
 }
 
-.restaurant .description {
+.restaurant .description,
+.products .description {
     font-size: 18px;
     line-height: 1.7;
     color: #8c8c8c;
 
 }
 
-.restaurant .description > * + * {
+.restaurant .description>*+*,
+.products .description>*+* {
     margin-left: 10px;
 }
 
 .restaurant .description .dot {
     font-weight: 900;
+}
+
+.restaurant-link .image {
+    transition: scale 0.3s linear;
+}
+
+.restaurant-link:hover .image {
+    scale: 1.2;
+}
+
+.products-top {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.products-list {
+    padding: 44px 0 112px;
+}
+
+.product-image {
+    height: 212px;
+    overflow: hidden;
+}
+
+.product-title {
+    line-height: 1.7;
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.product-description {
+    color: #8c8c8c;
+    font-size: 18px;
+    margin-bottom: 24px;
+}
+
+.product-option .button {
+    display: inline-flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.product-option {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.product .price {
+    font-size: 20px;
+    line-height: 1.6;
 }
